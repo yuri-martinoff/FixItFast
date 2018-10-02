@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/persistenceStoreFactory.js"],"names":["define","createPersistenceStore","name","options"],"mappings":"AAKAA,UAAW,WACT,YAeA,QAHEC,uBAAwB,SAAUC,EAAMC","file":"persistenceStoreFactory.js"}
