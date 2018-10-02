@@ -31,7 +31,6 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController, ConnectionDra
 
   // Root router configuration
   router.configure({
-    'tour': { label: 'Tour' },
     'incidents': { label: 'Incidents' },
     'signin': { label: 'Sign In', isDefault: true },
     'customers': { label: 'Customers' },
