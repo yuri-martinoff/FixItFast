@@ -27,9 +27,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
         processCustomers(response);
       }
 
-      self.onlineStateChangeSubscription = app.subscribeForDeviceOnlineStateChange(function() {
-        document.getElementById('customerlistview').refresh();
-      });
+
     };
 
     function processCustomers(response) {

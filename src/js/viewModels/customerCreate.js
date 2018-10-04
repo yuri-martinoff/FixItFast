@@ -18,7 +18,7 @@ function(oj, ko, $, app, data) {
     var self = this;
 
     // adjust content padding
-    self.handleTransitionCompleted = function(info) {  
+    self.handleTransitionCompleted = function(info) {
       app.appUtilities.adjustContentPadding();
     };
 
@@ -55,7 +55,6 @@ function(oj, ko, $, app, data) {
       }).fail(function(response) {
         oj.Logger.error('Failed to create customer.', response);
         oj.Router.rootInstance.go('customers');
-        app.connectionDrawer.showAfterUpdateMessage();
       });
     };
 

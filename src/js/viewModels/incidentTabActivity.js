@@ -159,7 +159,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
           self.allActivities.unshift(JSON.parse(response));
         }).fail(function(response) {
           oj.Logger.error('Failed to post activity', response);
-          app.connectionDrawer.showAfterUpdateMessage();
+          //app.connectionDrawer.showAfterUpdateMessage();
         });
       }
     };

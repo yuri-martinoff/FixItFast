@@ -65,9 +65,9 @@ module.exports = function () {
  *   open, a blooean for wheather to launch browser, default to true
  *   base, a string of the target directory to be served, default to the staging area
  */
-    // connect: {
-    //   options: {}
-    // },
+     connect: {
+       options: {port : 8001, hostname : 'localhost', livereload : false, open : true, base : 'web' }
+     },
     },
 
 /**

@@ -16,14 +16,13 @@ define(['ojs/ojcore', 'knockout', 'jquery',
         'mapping',
         'PushClient',
         'OfflineController',
-        'ConnectionDrawer',
         'ojs/ojknockout',
         'ojs/ojnavigationlist',
         'ojs/ojoffcanvas',
         'ojs/ojmodule',
         'ojs/ojrouter',
         'ojs/ojmoduleanimations'],
-function (oj, ko, $, data, mapping, PushClient, OfflineController, ConnectionDrawer) {
+function (oj, ko, $, data, mapping, PushClient, OfflineController) {
 
   oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
@@ -53,7 +52,6 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController, ConnectionDra
     //offline controller
     self.offlineController = new OfflineController(self);
 
-    self.connectionDrawer = new ConnectionDrawer(self);
 
     self.unreadIncidentsNum = ko.observable();
 
@@ -113,13 +111,10 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController, ConnectionDra
     self.userProfileModel = ko.observable();
 
     self.isDeviceOnline = function() {
-      return self.connectionDrawer.isOnline();
+      return false;
     }
 
 
-    self.subscribeForDeviceOnlineStateChange = function(callback) {
-      return self.connectionDrawer.isOnline.subscribe(callback);
-    }
 
      self.getUserProfile = function () {
       return new Promise(function(resolve, reject){
@@ -158,7 +153,6 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController, ConnectionDra
         // update success
       }).catch(function(response){
         oj.Logger.error(response);
-        self.connectionDrawer.showAfterUpdateMessage();
       });
     };
 

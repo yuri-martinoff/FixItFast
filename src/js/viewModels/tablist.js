@@ -78,9 +78,7 @@ function(oj, ko, $, data, app, persistenceStoreManager) {
         processIncidentsData(incidentsData);
       };
 
-      self.onlineStateChangeSubscription = app.subscribeForDeviceOnlineStateChange(function() {
-        document.getElementById('incidentsListView').refresh();
-      });
+
 
       return new Promise(function(resolve, reject){
         self.incidentsPromise = data.getIncidents();
@@ -281,7 +279,7 @@ function(oj, ko, $, data, app, persistenceStoreManager) {
           self.filterIncidents();
         }).fail(function(response){
           oj.Logger.error('Failed to update incident.', response)
-          app.connectionDrawer.showAfterUpdateMessage();
+          //app.connectionDrawer.showAfterUpdateMessage();
         });
 
       } else {

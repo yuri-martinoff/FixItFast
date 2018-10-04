@@ -107,7 +107,7 @@ function(oj, ko, $, data, app, mapping) {
         // update customer success
       }).fail(function(response) {
         oj.Logger.error('Failed to update customer.', response);
-        app.connectionDrawer.showAfterUpdateMessage();
+        //app.connectionDrawer.showAfterUpdateMessage();
       });
     };
 

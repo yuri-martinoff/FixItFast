@@ -78,7 +78,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'dataService', 'appController', 'ojs
         // update success
       }).fail(function(response) {
         oj.Logger.error('Failed to update incident.', response);
-        app.connectionDrawer.showAfterUpdateMessage();
+        //app.connectionDrawer.showAfterUpdateMessage();
       });
     };
 
