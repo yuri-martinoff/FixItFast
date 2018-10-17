@@ -197,7 +197,7 @@ function(oj, ko, $, data, app, persistenceStoreManager) {
     });
 
     self.incidentSelectable = function(itemContext) {
-      return app.isDeviceOnline() || itemContext.data.cached;
+      return itemContext.data.cached;
     }
 
     self.incidentSelected = function(event) {

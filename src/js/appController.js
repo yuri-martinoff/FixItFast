@@ -14,7 +14,6 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
         'dataService',
         'mapping',
-        'PushClient',
         'OfflineController',
         'ojs/ojknockout',
         'ojs/ojnavigationlist',
@@ -22,7 +21,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
         'ojs/ojmodule',
         'ojs/ojrouter',
         'ojs/ojmoduleanimations'],
-function (oj, ko, $, data, mapping, PushClient, OfflineController) {
+function (oj, ko, $, data, mapping, OfflineController) {
 
   oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
@@ -35,9 +34,7 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController) {
     'customers': { label: 'Customers' },
     'profile': { label: 'Profile' },
     'about': { label: 'About' },
-    'incident': { label: 'Incident' },
-    'settings': { label: 'Settings' },
-    'createIncident': { label: 'Create an Incident' }
+    'settings': { label: 'Settings' }
   });
 
   function AppControllerViewModel() {
@@ -46,8 +43,7 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController) {
 
     var self = this;
 
-    // push client
-    self.pushClient = new PushClient(self);
+
 
     //offline controller
     self.offlineController = new OfflineController(self);
@@ -102,17 +98,13 @@ function (oj, ko, $, data, mapping, PushClient, OfflineController) {
     });
 
     // Assume online mode to start with
-    self.usingMobileBackend(true);
+    self.usingMobileBackend(false);
 
     // disable buttons for post/patch/put
     self.isReadOnlyMode = true;
 
     // Load user profile
     self.userProfileModel = ko.observable();
-
-    self.isDeviceOnline = function() {
-      return false;
-    }
 
 
 

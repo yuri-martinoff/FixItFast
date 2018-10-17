@@ -52,7 +52,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController',
         return;
 
       window.sessionStorage.rememberUserName = '' + (self.rememberUserName() && self.rememberUserName().indexOf('remember') != -1);
-      app.pushClient.registerForNotifications();
       oj.Router.rootInstance.go('incidents/tabdashboard');
     };
 

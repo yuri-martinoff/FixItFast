@@ -207,7 +207,7 @@ define(['ojs/ojcore', 'knockout', 'jquery',
     };
 
     self.customerSelectable = function(itemContext) {
-      return app.isDeviceOnline() || itemContext.data.cached;
+      return  itemContext.data.cached;
     }
 
     // handler for drill in to customer details
