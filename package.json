@@ -8,7 +8,7 @@
   "devDependencies": {
     "@oracle/grunt-oraclejet": "~5.2.0",
     "@oracle/oraclejet-tooling": "~5.2.0",
-    "grunt": "^1.0.1",
+    "grunt": "^1.3.0",
     "gulp": "^3.9.1",
     "load-grunt-config": "0.19.2",
     "node-sass": "^4.7.2",
